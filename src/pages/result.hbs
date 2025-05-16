@@ -1,0 +1,40 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to Glitch!</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    {{#if processedData}}
+     <!-- Loop to output notable items first -->
+      {{#each processedData}}
+        {{#if notable}}
+      <h3>{{headline}}</h3>
+      <p>{{body}}</p>
+      <p><b><i><a href="{{link}}">{{linkText}}</a></i></b>{{#if paywall }} <i>[£]</i>{{/if}}</p>
+        {{/if}}
+      {{/each}}
+      <!-- Now start an unordered list for non-notable items -->
+    <ul>
+      {{#each processedData}}
+        {{#unless notable}}
+      <li><b>{{headline}}</b>{{body}} <b><i><a href="{{link}}">{{shortLinkText}}</a></i></b> {{#if paywall}} <i>[£]</i>{{/if}}</li>
+        {{/unless}}
+      {{/each}}
+    </ul>
+  {{/if}}
+  </body>
+</html>
