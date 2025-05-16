@@ -1,0 +1,133 @@
+/******************************************************************************
+START Glitch hello-app default styles
+
+The styles in this section do some minimal CSS resets, set default fonts and 
+colors, and handle the layout for our footer and "Remix on Glitch" button. If
+you're new to CSS they may seem a little complicated, but you can scroll down
+to this section's matching END comment to see page-specific styles.
+******************************************************************************/
+/* Our default values set as CSS variables */
+:root {
+  --color-bg: #BDC9FF;
+  --color-text-main: #000000;
+  --color-primary: #AFECE0;
+  --wrapper-height: 87vh;
+  --image-max-width: 300px;
+  --image-margin: 3rem;
+  --font-family: "HK Grotesk";
+  --font-family-header: "HK Grotesk";
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+/* Import fonts */
+@font-face {
+  font-family: HK Grotesk;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027")
+    format("opentype");
+}
+@font-face {
+  font-family: HK Grotesk;
+  font-weight: bold;
+  src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Bold.otf?v=1603136323437")
+    format("opentype");
+}
+
+
+/******************************************************************************
+END Glitch hello-app default styles
+******************************************************************************/
+
+body {
+  font-family: HK Grotesk, sans-serif;
+  background-color: var(--color-bg);
+}
+
+/* Page structure */
+.wrapper {
+  min-height: var(--wrapper-height);
+  display: grid;
+  place-items: center;
+  margin: 0 1rem;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+/* Title h1 style */
+.title {
+  color: #2800FF;
+  font-family: HK Grotesk, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3em;
+  line-height: 105%;
+  margin: 2rem 0 0;
+}
+
+/* Styles for our custom color form and its results */
+.color-info {
+  margin-left: 5px;
+}
+.color-search {
+  margin-top: 3rem;
+}
+.color-form {
+  width: 90%;
+  max-width: 500px;
+  margin-left: 5px;
+}
+.color-form a:not(.btn--remix) {
+  font-weight: bold;
+  color: var(--color-text-main);
+  margin-top: 8px;
+}
+.color-form button {
+  margin-top: 8px;
+}
+.color-form button:hover {
+  cursor: pointer;
+  box-shadow: -8px 4px 20px #9BE7D8;
+}
+form {
+  margin: 0.75rem 0;
+}
+
+button,
+input {
+  font-family: inherit;
+  font-size: 100%;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+label {
+  color: #000000;
+  font-weight: bold;
+}
+
+/* Instructions */
+.instructions {
+  margin: 1rem auto 0;
+}
+.instructions p {
+  font-size: 1rem;
+}
+h2 {
+  color: #2800FF;
+}
