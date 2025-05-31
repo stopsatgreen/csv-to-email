@@ -3,12 +3,12 @@ const fastify = require("fastify")({
   logger: false,
 });
 const csvToJSON = require("csvtojson");
-const serverless = require("serverless-http"); // Import serverless-http
+const serverless = require("serverless-http");
 
 // Setup static files
-// Adjusted path to public folder relative to the functions directory
+// Path adjusted: 'public' is now directly inside the functions bundle
 fastify.register(require("@fastify/static"), {
-  root: path.join(__dirname, "..", "public"),
+  root: path.join(__dirname, "public"),
   prefix: "/",
 });
 
@@ -23,8 +23,8 @@ fastify.register(require("@fastify/view"), {
   engine: {
     handlebars: require("handlebars"),
   },
-  // Adjusted path to templates relative to the functions directory
-  root: path.join(__dirname, "..", "src", "pages"),
+  // Path adjusted: 'src/pages' is now directly inside the functions bundle
+  root: path.join(__dirname, "src", "pages"),
 });
 
 // Helper function to shorten URLs
