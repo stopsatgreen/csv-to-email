@@ -23,7 +23,7 @@ fastify.register(require("@fastify/view"), {
     handlebars: require("handlebars"),
   },
   // Path adjusted: 'src/pages' is now directly inside the functions bundle
-  root: path.join(__dirname, "..", "src", "pages"),
+  root: path.join(__dirname, "src", "pages"),
 });
 
 // Helper function to shorten URLs
