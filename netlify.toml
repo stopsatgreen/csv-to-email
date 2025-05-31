@@ -5,6 +5,7 @@
 
 [functions]
   directory = "functions" # Specifies the directory where Netlify should look for your functions
+  included_files = ["functions/src/pages/**"] #Hard code path to key files
 
 [[redirects]]
   from = "/*" # Redirect all incoming requests
