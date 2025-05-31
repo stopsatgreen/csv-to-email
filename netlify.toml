@@ -1,11 +1,12 @@
 [build]
-  command = "npm install && npm run build:functions" # Run npm install and then copy files
-  publish = "." # The base directory for static assets.
+  command = "npm install" # Command to install dependencies during Netlify's build
+  publish = "." # Sets the base directory for static assets. Since your function handles all routing, including static files,
+                # this is set to the project root.
 
 [functions]
   directory = "functions" # Specifies the directory where Netlify should look for your functions
 
 [[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/server"
-  status = 200
+  from = "/*" # Redirect all incoming requests
+  to = "/.netlify/functions/server" # To your 'server' function (functions/server.js)
+  status = 200 # Use a 200 status to proxy the request (don't change the URL in the browser)
