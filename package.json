@@ -16,6 +16,9 @@
     "handlebars": "^4.7.8",
     "serverless-http": "^3.x.x"
   },
+  "devDependencies": {
+    "copyfiles": "^2.4.1" // Add copyfiles
+  },
   "engines": {
     "node": "16.x"
   },
