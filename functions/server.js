@@ -6,7 +6,6 @@ const csvToJSON = require("csvtojson");
 const serverless = require("serverless-http");
 
 // Setup static files
-// Path adjusted: 'public' is now directly inside the functions bundle
 fastify.register(require("@fastify/static"), {
   root: path.join(__dirname, "public"),
   prefix: "/",
